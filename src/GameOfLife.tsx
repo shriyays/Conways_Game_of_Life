@@ -3,8 +3,8 @@ import type { Cell, Grid } from "./types";
 import { nextGeneration } from "./rules";
 
 // ── CONSTANTS ──────────────────────────────────────────
-const ROWS: number = 100;
-const COLS: number = 100;
+const ROWS: number = 50;
+const COLS: number = 50;
 const CELL_SIZE: number = 10;
 
 // ── PATTERNS ───────────────────────────────────────────
@@ -107,19 +107,18 @@ export default function App() {
 
   return (
     <div style={{
-      background: "#0f172a",
+      background: "#bfe8fc",
       minHeight: "100vh",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
       fontFamily: "monospace",
-      color: "#e2e8f0",
-      padding: "20px"
+      color: "#fde2f3",
+      padding: "0 20px"
     }}>
-      <h2 style={{ marginBottom: 4, color: "#a78bfa", fontSize: 22 }}>🧬 Conway's Game of Life</h2>
-      <p style={{ marginBottom: 16, color: "#64748b", fontSize: 13 }}>Simple rules → Complex emergent behavior</p>
-
+      <h2 style={{ marginBottom: 4, color: "#4768ed", fontSize: 22 }}>🧬 Conway's Game of Life</h2>
+      <br></br>
       {/* CONTROLS */}
       <div style={{ display: "flex", gap: 10, marginBottom: 10, alignItems: "center", flexWrap: "wrap" }}>
         <button onClick={() => setRunning(r => !r)} style={{ padding: "6px 16px", borderRadius: 8, border: "none", cursor: "pointer", background: running ? "#ef4444" : "#22c55e", color: "white", fontWeight: 700 }}>
@@ -146,9 +145,9 @@ export default function App() {
 
       {/* PATTERNS */}
       <div style={{ display: "flex", gap: 6, marginBottom: 12, alignItems: "center", flexWrap: "wrap" }}>
-        <span style={{ color: "#64748b", fontSize: 12 }}>Patterns:</span>
+        <span style={{ color: "#76808e", fontSize: 12 }}>Patterns:</span>
         {Object.keys(PATTERNS).map(p => (
-          <button key={p} onClick={() => handlePattern(p)} style={{ padding: "3px 12px", borderRadius: 6, border: "1px solid #334155", background: "#1e293b", color: "#94a3b8", fontSize: 12, cursor: "pointer" }}>
+          <button key={p} onClick={() => handlePattern(p)} style={{ padding: "3px 12px", borderRadius: 6, border: "1px solid #a3c5f5", background: "#4683e5", color: "#d1e2fa", fontSize: 12, cursor: "pointer" }}>
             {p}
           </button>
         ))}
@@ -160,7 +159,7 @@ export default function App() {
         gridTemplateColumns: `repeat(${COLS}, ${CELL_SIZE}px)`,
         gap: 1,
         padding: "10px",
-        background: "#1e293b",
+        background: "#000000",
         borderRadius: 8,
       }}>
         {grid.map((row: Cell[], r: number) =>
@@ -171,7 +170,7 @@ export default function App() {
               style={{
                 width: CELL_SIZE,
                 height: CELL_SIZE,
-                background: cell === 1 ? "#818cf8" : "#0f172a",
+                background: cell === 1 ? "#0151fd" : "#000000",
                 borderRadius: 2,
                 cursor: "pointer",
               }}
