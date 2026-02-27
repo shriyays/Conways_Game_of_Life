@@ -1,0 +1,1 @@
+"Cellular automata (CA) are  discrete, mathematical models comprising a grid of cells that evolve through parallel, time-stepped updates based on local rules. They function by transitioning cell states (e.g., on/off) based on neighbor configurations, often creating complex, emergent, or self-organizing patterns from simple, localized, and uniform rules." - Gemini, 23/Feb/2026
